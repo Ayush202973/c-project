@@ -13,17 +13,26 @@ namespace GuessTheGame
             string name = Console.ReadLine();
             Console.WriteLine("MARKSHEET OF" + " " + name);
             string[] arr = {"Maths","English","Physics","Social","Chemistry","VP","CT","CN","SEP" };
+            double obtainedMarks = 0;
+        
+            int [] marks= new int[arr.Length];
             for(int i=0; i<arr.Length; i++) 
             {
                 Console.WriteLine("Enter your marks in" +" "+ arr[i]);
-                int marks=Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine(arr[i] + " :" + marks);
+                marks[i] = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine(arr[i]+" " + marks[i]);
+                obtainedMarks = obtainedMarks+marks[i];
+               
+
               
 
             }
-          
-            int total = 900;
+          Console.WriteLine("Obtained marks is"+" "+obtainedMarks);
+            double total = 900;
+            double percentage=(obtainedMarks/total)/100;
             Console.WriteLine("Total Marks" + " " + total);
+            
+            Console.WriteLine("Your total Percentage is:"+percentage+"%");
             
     }
     }
