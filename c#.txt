@@ -1,0 +1,100 @@
+using System;
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Enter Your Name");
+        string name = Console.ReadLine();
+
+        Console.WriteLine("Please see the below details to see your Marks in particular Subjects\n" +
+            "1. Maths\n" +
+            "2. Physics\n" +
+            "3. Chemistry\n" +
+            "4. English\n" +
+            "5. Social\n" +
+            "6. VP\n" +
+            "7. CT\n" +
+            "8. CN\n" +
+            "9. SEP\n" +
+            "0. Total Percentage and exit\n");
+
+        if (name == "Ayush")
+        {
+            int m = 95;
+            int p = 95;
+            int c = 95;
+            int e = 95;
+            int s = 95;
+            int ct = 95;
+            int cn = 95;
+            int sep = 95;
+            int vp = 95;
+
+            while (true)
+            {
+                Console.WriteLine("Select the particular option you want");
+                int student = Convert.ToInt32(Console.ReadLine());
+
+                if (student == 0)
+                {
+                    break;
+                }
+
+                int total = 0;
+
+                switch (student)
+                {
+                    case 1:
+                        Console.WriteLine("Maths: " + m);
+                        break;
+                    case 2:
+                        Console.WriteLine("Physics: " + p);
+                        break;
+                    case 3:
+                        Console.WriteLine("Chemistry: " + c);
+                        break;
+                    case 4:
+                        Console.WriteLine("English: " + e);
+                        total = e;
+                        break;
+                    case 5:
+                        Console.WriteLine("Social: " + s);
+                        break;
+                    case 6:
+                        Console.WriteLine("VP: " + vp);
+                        break;
+                    case 7:
+                        Console.WriteLine("CT: " + ct);
+                        break;
+                    case 8:
+                        Console.WriteLine("CN: " + cn);
+                        break;
+                    case 9:
+                        Console.WriteLine("SEP: " + sep);
+                      
+                        break;
+                    default:
+                        Console.WriteLine("Invalid option selected.");
+                        return;
+                }
+
+                double result = (total / 900.0) * 100;
+               
+            }
+
+            int totalMarks = m + p + c + e + s + ct + cn + sep + vp;
+            double overallPercentage = (totalMarks / 900.0) * 100;
+
+            Console.WriteLine("Your Total Percentage is: " + overallPercentage + "%");
+            if (overallPercentage < 60)
+            {
+                Console.WriteLine("Your percentage is low. You should do more hard work.");
+            }
+            else
+            {
+                Console.WriteLine("Very Good result. Keep it up. Try to improve more.");
+            }
+        }
+    }
+}
