@@ -35,6 +35,10 @@ namespace GuessTheGame
                 {
                     Console.WriteLine(abc[i]);
                 }
+                else
+                {
+                    Console.WriteLine("Character not found");
+                }
             }
         }
         
